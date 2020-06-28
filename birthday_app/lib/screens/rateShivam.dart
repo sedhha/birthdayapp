@@ -1,8 +1,9 @@
 import 'package:birthday_app/customizations/BirthdayCardCustomization.dart';
 import 'package:birthday_app/customizations/navigator_screen.dart';
+import 'package:birthday_app/customizations/spinnerEnable.dart';
 import 'package:birthday_app/customizations/startupscreen.dart';
 import 'package:flutter/material.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 class RateShivam extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,6 +17,7 @@ class rateShivam extends StatefulWidget {
 }
 
 class _rateShivamState extends State<rateShivam> {
+  bool _spinner = false;
   int Rating;
   void updateColorSchema(int x)
   {
@@ -41,7 +43,8 @@ class _rateShivamState extends State<rateShivam> {
   String Msg;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return _spinner==true?scaffy:Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: BasicBackground,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -156,12 +159,23 @@ class _rateShivamState extends State<rateShivam> {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(NavigatorRadius),
                 side: BorderSide(color: NavigatorBorderColour)),
-            onPressed: (){
+            onPressed: () async{
+              setState(() {
+                _spinner=true;
+              });
+              print("Begin");
               var JSONResponseObject ={
                 "message":Msg,
                 "name":Name,
                 "rating":Rating
               };
+              print(JSONResponseObject);
+              await Firestore.instance.collection('msg').document()
+                  .setData(JSONResponseObject);
+              setState(() {
+                _spinner=false;
+              });
+              print("Response added");
             },
             color: NavigatorBarColour,
             textColor: NavigatorTextColour,

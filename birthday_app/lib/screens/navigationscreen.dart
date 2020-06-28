@@ -1,4 +1,7 @@
 import 'package:birthday_app/screens/BirthdayCard.dart';
+import 'package:birthday_app/screens/BirthdayGallery.dart';
+import 'package:birthday_app/screens/KnowShivam.dart';
+import 'package:birthday_app/screens/rateShivam.dart';
 import 'package:flutter/material.dart';
 import 'package:birthday_app/customizations/user_screen.dart';
 import 'package:birthday_app/customizations/navigator_screen.dart';
@@ -49,7 +52,8 @@ class _navigatorScreenState extends State<navigatorScreen> {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(NavigatorRadius),
                 side: BorderSide(color: NavigatorBorderColour)),
-                onPressed: (){Navigator.push(
+                onPressed: (){
+              Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => BirthdayCard()),
                 );},
@@ -67,7 +71,10 @@ class _navigatorScreenState extends State<navigatorScreen> {
             borderRadius: BorderRadius.circular(NavigatorRadius),
             side: BorderSide(color: NavigatorBorderColour)),
         onPressed: (){
-
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => BirthdayGallery()),
+          );
         },
         color: NavigatorBarColour,
         textColor: NavigatorTextColour,
@@ -82,7 +89,12 @@ class _navigatorScreenState extends State<navigatorScreen> {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(NavigatorRadius),
             side: BorderSide(color: NavigatorBorderColour)),
-        onPressed: (){},
+        onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => KnowShivam()),
+          );
+        },
         color: NavigatorBarColour,
         textColor: NavigatorTextColour,
         child: Text(ButtonTexts[2],
@@ -96,7 +108,12 @@ class _navigatorScreenState extends State<navigatorScreen> {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(NavigatorRadius),
             side: BorderSide(color: NavigatorBorderColour)),
-        onPressed: (){},
+        onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => RateShivam()),
+          );
+        },
         color: NavigatorBarColour,
         textColor: NavigatorTextColour,
         child: Text(ButtonTexts[3],

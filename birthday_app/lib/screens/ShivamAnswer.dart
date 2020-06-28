@@ -2,7 +2,7 @@ import 'package:birthday_app/customizations/BirthdayCardCustomization.dart';
 import 'package:birthday_app/customizations/shivamquiz.dart';
 import 'package:birthday_app/customizations/startupscreen.dart';
 import 'package:flutter/material.dart';
-import 'package:birthday_app/customizations/navigator_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 class ShivamAnswer extends StatelessWidget {
   final int Score;
   final List<String> Answerss;
@@ -28,7 +28,12 @@ class _shivamAnswerState extends State<shivamAnswer> {
   @override
   initState() {
     super.initState();
-    print(Answerss);
+    var JSONResponseObject ={
+      "answer":Answerss,
+      "score":Score
+    };
+    Firestore.instance.collection('response').document()
+        .setData(JSONResponseObject);
   }
   @override
   Widget build(BuildContext context) {

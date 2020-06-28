@@ -27,6 +27,9 @@ dependencies:
   google_sign_in: ^4.5.1
   animated_text_kit: ^2.2.0
   flutter_spinkit: ^4.1.2
+  firebase_database: ^3.1.6
+  firebase_core: ^0.4.5
+  cloud_firestore: ^0.13.7
 
 dev_dependencies:
   flutter_test:
@@ -50,7 +53,25 @@ flutter:
     - assets/logos/google_logo.png
     - assets/images/StartupScreenBottomImage.jpg
     - assets/images/WelcomePersonImage.jpg
-
+    - assets/birthdayassets/greetings.png
+    - assets/birthdayalbum/1.jpg
+    - assets/birthdayalbum/2.jpg
+    - assets/birthdayalbum/3.jpg
+    - assets/birthdayalbum/4.jpg
+    - assets/birthdayalbum/5.jpg
+    - assets/birthdayalbum/6.jpg
+    - assets/birthdayalbum/7.jpg
+    - assets/birthdayalbum/8.jpg
+    - assets/birthdayalbum/9.jpg
+    - assets/birthdayalbum/10.jpg
+    - assets/birthdayalbum/11.jpg
+    - assets/birthdayalbum/12.jpg
+    - assets/birthdayalbum/13.jpg
+    - assets/birthdayalbum/14.jpg
+    - assets/birthdayalbum/15.jpg
+    - assets/birthdayalbum/16.jpg
+    - assets/birthdayalbum/17.jpg
+    - assets/birthdayalbum/18.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

@@ -1,3 +1,4 @@
+import 'package:birthday_app/screens/BirthdayCard.dart';
 import 'package:flutter/material.dart';
 import 'package:birthday_app/customizations/user_screen.dart';
 import 'package:birthday_app/customizations/navigator_screen.dart';
@@ -41,28 +42,68 @@ class _navigatorScreenState extends State<navigatorScreen> {
     SizedBox(height:30)];
   initState() {
     super.initState();
-    for(int i=0;i<ButtonTexts.length;i++)
-      {
-        NavigatorS.add(Container(
+    NavigatorS.add(Container(
           width: 300,
           height: 40,
           child: RaisedButton(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(NavigatorRadius),
                 side: BorderSide(color: NavigatorBorderColour)),
-                onPressed: () {
-//                  Navigator.push(
-//                    context,
-//                    MaterialPageRoute(builder: (context) => UserScreen()),
-//                  );
-                },
+                onPressed: (){Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => BirthdayCard()),
+                );},
                 color: NavigatorBarColour,
                 textColor: NavigatorTextColour,
-            child: Text(ButtonTexts[i],
+            child: Text(ButtonTexts[0],
                 style: TextStyle(fontSize: 20)),
           ),
         ));
-      }
+    NavigatorS.add(Container(
+      width: 300,
+      height: 40,
+      child: RaisedButton(
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(NavigatorRadius),
+            side: BorderSide(color: NavigatorBorderColour)),
+        onPressed: (){
+
+        },
+        color: NavigatorBarColour,
+        textColor: NavigatorTextColour,
+        child: Text(ButtonTexts[1],
+            style: TextStyle(fontSize: 20)),
+      ),
+    ));
+    NavigatorS.add(Container(
+      width: 300,
+      height: 40,
+      child: RaisedButton(
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(NavigatorRadius),
+            side: BorderSide(color: NavigatorBorderColour)),
+        onPressed: (){},
+        color: NavigatorBarColour,
+        textColor: NavigatorTextColour,
+        child: Text(ButtonTexts[2],
+            style: TextStyle(fontSize: 20)),
+      ),
+    ));
+    NavigatorS.add(Container(
+      width: 300,
+      height: 40,
+      child: RaisedButton(
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(NavigatorRadius),
+            side: BorderSide(color: NavigatorBorderColour)),
+        onPressed: (){},
+        color: NavigatorBarColour,
+        textColor: NavigatorTextColour,
+        child: Text(ButtonTexts[3],
+            style: TextStyle(fontSize: 20)),
+      ),
+    ));
+
   }
   @override
   Widget build(BuildContext context) {
